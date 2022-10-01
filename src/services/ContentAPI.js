@@ -1,7 +1,5 @@
 import { gql } from '@apollo/client';
-import { client } from '../Constants/graphQlEndpoint';
-
-
+import { client } from '../constants/graphQlEndpoint';
 
 export const ContentAPI = (str) => {
     return new Promise((resolve, reject) => {
@@ -46,7 +44,7 @@ export const ContentAPI = (str) => {
        }
     `,
         }).then(data=>resolve(data))
-        .catch((error) => {console.log("eerrr",error)
+        .catch((error) => {console.log("API error",error)
             reject(error);
           });
 })}
